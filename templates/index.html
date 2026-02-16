@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{%block title%}Home{% endblock %}
+{% block main %}
+   <header>
+      <h1>Bible Therapy</h1>
+   </header>
+   <main>
+    <h2>Select your emotion!</h2>
+    <form action="/emotion" method="post">
+      <ul class="notype">
+         <li><button value="anxiety" name="emotion" class="emotion">Anxiety</button></li>
+         <li><button value="temptation" name="emotion" class="emotion">Temptation</button></li>
+         <li><button value="patience" name="emotion" class="emotion">Patience</button></li>
+         <li><button value="joy" name="emotion" class="emotion">Joy</button></li>
+         <li><button value="hope" name="emotion" class="emotion">Hope</button></li>
+         <hr>
+      </ul>
+     </form>
+     <form action="/books" method="post">
+      <h2>Or select directly a book!</h2>
+      <ul class="notype books">
+         {% for book in books %}
+         <li><button value="{{ book['name'] }}" name="book" class="emotion">{{ book["name"] }}</button></li>
+         {% endfor %}
+      </ul>
+     </form>
+   </main>
+
+{% endblock %}

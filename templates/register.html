@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+   <header>
+      <h1>Bible Therapy</h1>
+   </header>
+    <h2><u>Register:</u></h2>
+    <form action="/register" method="post">
+        <div class="mb-3">
+            <input autocomplete="on" autofocus class="form-control mx-auto w-auto" name="email" placeholder="Email" type="email">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="password" placeholder="Password" type="password">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="confirmation" placeholder="Password (again)" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit" name="register">Register</button>
+    </form>
+{% endblock %}
